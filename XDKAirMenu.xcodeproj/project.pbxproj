@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C7752E41870942900163E78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7752E31870942900163E78 /* Foundation.framework */; };
+		4C7752E61870942900163E78 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7752E51870942900163E78 /* CoreGraphics.framework */; };
+		4C7752E81870942900163E78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7752E71870942900163E78 /* UIKit.framework */; };
+		4C7752EE1870942900163E78 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C7752EC1870942900163E78 /* InfoPlist.strings */; };
+		4C7752F01870942900163E78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7752EF1870942900163E78 /* main.m */; };
+		4C7752F41870942900163E78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7752F31870942900163E78 /* AppDelegate.m */; };
+		4C7752F71870942900163E78 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7752F51870942900163E78 /* Main_iPhone.storyboard */; };
+		4C7752FA1870942900163E78 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7752F81870942900163E78 /* Main_iPad.storyboard */; };
+		4C7752FD1870942900163E78 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7752FC1870942900163E78 /* ViewController.m */; };
+		4C7752FF1870942900163E78 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C7752FE1870942900163E78 /* Images.xcassets */; };
+		4C7753061870942900163E78 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7753051870942900163E78 /* XCTest.framework */; };
+		4C7753071870942900163E78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7752E31870942900163E78 /* Foundation.framework */; };
+		4C7753081870942900163E78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7752E71870942900163E78 /* UIKit.framework */; };
+		4C7753101870942900163E78 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C77530E1870942900163E78 /* InfoPlist.strings */; };
+		4C7753121870942900163E78 /* XDKAirMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7753111870942900163E78 /* XDKAirMenuTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C7753091870942900163E78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C7752D81870942900163E78 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C7752DF1870942900163E78;
+			remoteInfo = XDKAirMenu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4C7752E01870942900163E78 /* XDKAirMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XDKAirMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C7752E31870942900163E78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4C7752E51870942900163E78 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4C7752E71870942900163E78 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4C7752EB1870942900163E78 /* XDKAirMenu-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XDKAirMenu-Info.plist"; sourceTree = "<group>"; };
+		4C7752ED1870942900163E78 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C7752EF1870942900163E78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C7752F11870942900163E78 /* XDKAirMenu-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XDKAirMenu-Prefix.pch"; sourceTree = "<group>"; };
+		4C7752F21870942900163E78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4C7752F31870942900163E78 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4C7752F61870942900163E78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		4C7752F91870942900163E78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		4C7752FB1870942900163E78 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4C7752FC1870942900163E78 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4C7752FE1870942900163E78 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4C7753041870942900163E78 /* XDKAirMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XDKAirMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C7753051870942900163E78 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4C77530D1870942900163E78 /* XDKAirMenuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XDKAirMenuTests-Info.plist"; sourceTree = "<group>"; };
+		4C77530F1870942900163E78 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C7753111870942900163E78 /* XDKAirMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDKAirMenuTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C7752DD1870942900163E78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C7752E61870942900163E78 /* CoreGraphics.framework in Frameworks */,
+				4C7752E81870942900163E78 /* UIKit.framework in Frameworks */,
+				4C7752E41870942900163E78 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C7753011870942900163E78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C7753061870942900163E78 /* XCTest.framework in Frameworks */,
+				4C7753081870942900163E78 /* UIKit.framework in Frameworks */,
+				4C7753071870942900163E78 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C7752D71870942900163E78 = {
+			isa = PBXGroup;
+			children = (
+				4C7752E91870942900163E78 /* XDKAirMenu */,
+				4C77530B1870942900163E78 /* XDKAirMenuTests */,
+				4C7752E21870942900163E78 /* Frameworks */,
+				4C7752E11870942900163E78 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C7752E11870942900163E78 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C7752E01870942900163E78 /* XDKAirMenu.app */,
+				4C7753041870942900163E78 /* XDKAirMenuTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C7752E21870942900163E78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C7752E31870942900163E78 /* Foundation.framework */,
+				4C7752E51870942900163E78 /* CoreGraphics.framework */,
+				4C7752E71870942900163E78 /* UIKit.framework */,
+				4C7753051870942900163E78 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C7752E91870942900163E78 /* XDKAirMenu */ = {
+			isa = PBXGroup;
+			children = (
+				4C7752F21870942900163E78 /* AppDelegate.h */,
+				4C7752F31870942900163E78 /* AppDelegate.m */,
+				4C7752F51870942900163E78 /* Main_iPhone.storyboard */,
+				4C7752F81870942900163E78 /* Main_iPad.storyboard */,
+				4C7752FB1870942900163E78 /* ViewController.h */,
+				4C7752FC1870942900163E78 /* ViewController.m */,
+				4C7752FE1870942900163E78 /* Images.xcassets */,
+				4C7752EA1870942900163E78 /* Supporting Files */,
+			);
+			path = XDKAirMenu;
+			sourceTree = "<group>";
+		};
+		4C7752EA1870942900163E78 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C7752EB1870942900163E78 /* XDKAirMenu-Info.plist */,
+				4C7752EC1870942900163E78 /* InfoPlist.strings */,
+				4C7752EF1870942900163E78 /* main.m */,
+				4C7752F11870942900163E78 /* XDKAirMenu-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C77530B1870942900163E78 /* XDKAirMenuTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C7753111870942900163E78 /* XDKAirMenuTests.m */,
+				4C77530C1870942900163E78 /* Supporting Files */,
+			);
+			path = XDKAirMenuTests;
+			sourceTree = "<group>";
+		};
+		4C77530C1870942900163E78 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C77530D1870942900163E78 /* XDKAirMenuTests-Info.plist */,
+				4C77530E1870942900163E78 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C7752DF1870942900163E78 /* XDKAirMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C7753151870942900163E78 /* Build configuration list for PBXNativeTarget "XDKAirMenu" */;
+			buildPhases = (
+				4C7752DC1870942900163E78 /* Sources */,
+				4C7752DD1870942900163E78 /* Frameworks */,
+				4C7752DE1870942900163E78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XDKAirMenu;
+			productName = XDKAirMenu;
+			productReference = 4C7752E01870942900163E78 /* XDKAirMenu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4C7753031870942900163E78 /* XDKAirMenuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C7753181870942900163E78 /* Build configuration list for PBXNativeTarget "XDKAirMenuTests" */;
+			buildPhases = (
+				4C7753001870942900163E78 /* Sources */,
+				4C7753011870942900163E78 /* Frameworks */,
+				4C7753021870942900163E78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C77530A1870942900163E78 /* PBXTargetDependency */,
+			);
+			name = XDKAirMenuTests;
+			productName = XDKAirMenuTests;
+			productReference = 4C7753041870942900163E78 /* XDKAirMenuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C7752D81870942900163E78 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = XavierDeKoninck;
+				TargetAttributes = {
+					4C7753031870942900163E78 = {
+						TestTargetID = 4C7752DF1870942900163E78;
+					};
+				};
+			};
+			buildConfigurationList = 4C7752DB1870942900163E78 /* Build configuration list for PBXProject "XDKAirMenu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4C7752D71870942900163E78;
+			productRefGroup = 4C7752E11870942900163E78 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C7752DF1870942900163E78 /* XDKAirMenu */,
+				4C7753031870942900163E78 /* XDKAirMenuTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C7752DE1870942900163E78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C7752FA1870942900163E78 /* Main_iPad.storyboard in Resources */,
+				4C7752FF1870942900163E78 /* Images.xcassets in Resources */,
+				4C7752F71870942900163E78 /* Main_iPhone.storyboard in Resources */,
+				4C7752EE1870942900163E78 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C7753021870942900163E78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C7753101870942900163E78 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C7752DC1870942900163E78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C7752FD1870942900163E78 /* ViewController.m in Sources */,
+				4C7752F41870942900163E78 /* AppDelegate.m in Sources */,
+				4C7752F01870942900163E78 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C7753001870942900163E78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C7753121870942900163E78 /* XDKAirMenuTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C77530A1870942900163E78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C7752DF1870942900163E78 /* XDKAirMenu */;
+			targetProxy = 4C7753091870942900163E78 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4C7752EC1870942900163E78 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C7752ED1870942900163E78 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4C7752F51870942900163E78 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C7752F61870942900163E78 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		4C7752F81870942900163E78 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C7752F91870942900163E78 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		4C77530E1870942900163E78 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C77530F1870942900163E78 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C7753131870942900163E78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4C7753141870942900163E78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C7753161870942900163E78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XDKAirMenu/XDKAirMenu-Prefix.pch";
+				INFOPLIST_FILE = "XDKAirMenu/XDKAirMenu-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4C7753171870942900163E78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XDKAirMenu/XDKAirMenu-Prefix.pch";
+				INFOPLIST_FILE = "XDKAirMenu/XDKAirMenu-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4C7753191870942900163E78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/XDKAirMenu.app/XDKAirMenu";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XDKAirMenu/XDKAirMenu-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "XDKAirMenuTests/XDKAirMenuTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4C77531A1870942900163E78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/XDKAirMenu.app/XDKAirMenu";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XDKAirMenu/XDKAirMenu-Prefix.pch";
+				INFOPLIST_FILE = "XDKAirMenuTests/XDKAirMenuTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C7752DB1870942900163E78 /* Build configuration list for PBXProject "XDKAirMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C7753131870942900163E78 /* Debug */,
+				4C7753141870942900163E78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C7753151870942900163E78 /* Build configuration list for PBXNativeTarget "XDKAirMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C7753161870942900163E78 /* Debug */,
+				4C7753171870942900163E78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4C7753181870942900163E78 /* Build configuration list for PBXNativeTarget "XDKAirMenuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C7753191870942900163E78 /* Debug */,
+				4C77531A1870942900163E78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C7752D81870942900163E78 /* Project object */;
+}
