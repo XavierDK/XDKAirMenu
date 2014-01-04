@@ -14,7 +14,6 @@
 		4C7752F01870942900163E78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7752EF1870942900163E78 /* main.m */; };
 		4C7752F41870942900163E78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7752F31870942900163E78 /* AppDelegate.m */; };
 		4C7752F71870942900163E78 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7752F51870942900163E78 /* Main_iPhone.storyboard */; };
-		4C7752FA1870942900163E78 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7752F81870942900163E78 /* Main_iPad.storyboard */; };
 		4C7752FD1870942900163E78 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7752FC1870942900163E78 /* ViewController.m */; };
 		4C7752FF1870942900163E78 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C7752FE1870942900163E78 /* Images.xcassets */; };
 		4C7753061870942900163E78 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7753051870942900163E78 /* XCTest.framework */; };
@@ -22,6 +21,8 @@
 		4C7753081870942900163E78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7752E71870942900163E78 /* UIKit.framework */; };
 		4C7753101870942900163E78 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C77530E1870942900163E78 /* InfoPlist.strings */; };
 		4C7753121870942900163E78 /* XDKAirMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7753111870942900163E78 /* XDKAirMenuTests.m */; };
+		4C77531E1870948D00163E78 /* XDKAirMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C77531D1870948D00163E78 /* XDKAirMenuController.m */; };
+		4C7753201870DBB500163E78 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C77531F1870DBB500163E78 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +47,6 @@
 		4C7752F21870942900163E78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C7752F31870942900163E78 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4C7752F61870942900163E78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		4C7752F91870942900163E78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		4C7752FB1870942900163E78 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4C7752FC1870942900163E78 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4C7752FE1870942900163E78 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -55,6 +55,9 @@
 		4C77530D1870942900163E78 /* XDKAirMenuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XDKAirMenuTests-Info.plist"; sourceTree = "<group>"; };
 		4C77530F1870942900163E78 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C7753111870942900163E78 /* XDKAirMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDKAirMenuTests.m; sourceTree = "<group>"; };
+		4C77531C1870948D00163E78 /* XDKAirMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XDKAirMenuController.h; path = XDKAirMenu/XDKAirMenuController.h; sourceTree = "<group>"; };
+		4C77531D1870948D00163E78 /* XDKAirMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XDKAirMenuController.m; path = XDKAirMenu/XDKAirMenuController.m; sourceTree = "<group>"; };
+		4C77531F1870DBB500163E78 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C7753201870DBB500163E78 /* QuartzCore.framework in Frameworks */,
 				4C7752E61870942900163E78 /* CoreGraphics.framework in Frameworks */,
 				4C7752E81870942900163E78 /* UIKit.framework in Frameworks */,
 				4C7752E41870942900163E78 /* Foundation.framework in Frameworks */,
@@ -103,6 +107,7 @@
 		4C7752E21870942900163E78 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C77531F1870DBB500163E78 /* QuartzCore.framework */,
 				4C7752E31870942900163E78 /* Foundation.framework */,
 				4C7752E51870942900163E78 /* CoreGraphics.framework */,
 				4C7752E71870942900163E78 /* UIKit.framework */,
@@ -114,10 +119,10 @@
 		4C7752E91870942900163E78 /* XDKAirMenu */ = {
 			isa = PBXGroup;
 			children = (
+				4C77531B1870944900163E78 /* XDKAirMenu */,
 				4C7752F21870942900163E78 /* AppDelegate.h */,
 				4C7752F31870942900163E78 /* AppDelegate.m */,
 				4C7752F51870942900163E78 /* Main_iPhone.storyboard */,
-				4C7752F81870942900163E78 /* Main_iPad.storyboard */,
 				4C7752FB1870942900163E78 /* ViewController.h */,
 				4C7752FC1870942900163E78 /* ViewController.m */,
 				4C7752FE1870942900163E78 /* Images.xcassets */,
@@ -153,6 +158,15 @@
 				4C77530E1870942900163E78 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C77531B1870944900163E78 /* XDKAirMenu */ = {
+			isa = PBXGroup;
+			children = (
+				4C77531C1870948D00163E78 /* XDKAirMenuController.h */,
+				4C77531D1870948D00163E78 /* XDKAirMenuController.m */,
+			);
+			name = XDKAirMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +245,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C7752FA1870942900163E78 /* Main_iPad.storyboard in Resources */,
 				4C7752FF1870942900163E78 /* Images.xcassets in Resources */,
 				4C7752F71870942900163E78 /* Main_iPhone.storyboard in Resources */,
 				4C7752EE1870942900163E78 /* InfoPlist.strings in Resources */,
@@ -254,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C7752FD1870942900163E78 /* ViewController.m in Sources */,
+				4C77531E1870948D00163E78 /* XDKAirMenuController.m in Sources */,
 				4C7752F41870942900163E78 /* AppDelegate.m in Sources */,
 				4C7752F01870942900163E78 /* main.m in Sources */,
 			);
@@ -292,14 +306,6 @@
 				4C7752F61870942900163E78 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		4C7752F81870942900163E78 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C7752F91870942900163E78 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		4C77530E1870942900163E78 /* InfoPlist.strings */ = {
@@ -396,6 +402,7 @@
 				GCC_PREFIX_HEADER = "XDKAirMenu/XDKAirMenu-Prefix.pch";
 				INFOPLIST_FILE = "XDKAirMenu/XDKAirMenu-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -409,6 +416,7 @@
 				GCC_PREFIX_HEADER = "XDKAirMenu/XDKAirMenu-Prefix.pch";
 				INFOPLIST_FILE = "XDKAirMenu/XDKAirMenu-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -474,6 +482,7 @@
 				4C7753171870942900163E78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C7753181870942900163E78 /* Build configuration list for PBXNativeTarget "XDKAirMenuTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +491,7 @@
 				4C77531A1870942900163E78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

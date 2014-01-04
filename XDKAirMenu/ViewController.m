@@ -8,22 +8,74 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <XDKAirMenuDelegate>
+
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
+
 @implementation ViewController
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+        
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.airMenuController = [[XDKAirMenuController alloc] init];
+    self.airMenuController.airDelegate = self;
+  //  [self.view insertSubview:self.airMenuController.view atIndex:0];
+    [self.view addSubview:self.airMenuController.view];
+    [self addChildViewController:self.airMenuController];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"TableViewSegue"])
+    {
+        self.tableView = ((UITableViewController*)segue.destinationViewController).tableView;
+    }
+}
+
+
+#pragma mark - XDKAirMenuDelegate
+
+- (NSInteger)numberOfSectionsForAirMenu:(XDKAirMenuController*)airMenu
+{
+    return self.tableView.numberOfSections;
+}
+
+- (NSInteger)airMenu:(XDKAirMenuController*)airMenu numberOfRowInSection:(NSInteger)section
+{
+    return [self.tableView numberOfRowsInSection:section];
+}
+
+- (UIViewController*)airMenu:(XDKAirMenuController*)airMenu viewControllerAtIndexPath:(NSIndexPath*)indexPath
+{
+    UIStoryboard *storyboard = self.storyboard;
+    UIViewController *vc = nil;
+    
+    if (indexPath.row % 2 == 0)
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"SpecialViewController"];
+    else
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"SpecialViewController2"];
+    
+    return vc;
+}
+
+- (UITableView*)tableViewForAirMenu:(XDKAirMenuController*)airMenu
+{
+    return self.tableView;
 }
 
 @end
