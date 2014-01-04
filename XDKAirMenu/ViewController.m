@@ -29,7 +29,7 @@
     
     self.airMenuController = [[XDKAirMenuController alloc] init];
     self.airMenuController.airDelegate = self;
-  //  [self.view insertSubview:self.airMenuController.view atIndex:0];
+
     [self.view addSubview:self.airMenuController.view];
     [self addChildViewController:self.airMenuController];
 }
@@ -65,10 +65,10 @@
     UIStoryboard *storyboard = self.storyboard;
     UIViewController *vc = nil;
     
-    if (indexPath.row % 2 == 0)
-        vc = [storyboard instantiateViewControllerWithIdentifier:@"SpecialViewController"];
-    else
-        vc = [storyboard instantiateViewControllerWithIdentifier:@"SpecialViewController2"];
+    if (indexPath.row == 0)
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"ViewController1"];
+    else if (indexPath.row == 1)
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"ViewController2"];
     
     return vc;
 }

@@ -197,8 +197,7 @@
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(animationCloseMenu)];
         tapGesture.delegate = self;
         [self.currentViewController.view addGestureRecognizer:tapGesture];
-        
-        
+                
         [self.view addSubview:self.currentViewController.view];
         [self addChildViewController:self.currentViewController];
         
