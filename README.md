@@ -9,19 +9,21 @@ Perhaps the most important feature of all, however, is the amazing community of 
 
 Choose AFNetworking for your next project, or migrate over your existing projects—you'll be happy you did!
 
+<img src="img.gif" width='320'/>
+
 ## How To Get Started
 
 Download XDKAirMenu and try out the included iPhone example app
 Check out the documentation for a comprehensive look at all of the functionalities available in XDKAirMenu
 
-## Installation with CocoaPods
+### Installation with CocoaPods
 
 CocoaPods is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like AFNetworking in your projects. See the "Getting Started" guide for more information.
 Podfile
 
 	pod "EZForm"
 
-## Other installation
+### Other installation
 
 Git clone the source.
 
@@ -36,7 +38,7 @@ Import the main header:
 Create an EZForm instance and add some EZFormField subclass instances to it. For example:
 
 	- (void)initializeForm
-{
+	{
     /*
      * Create EZForm instance to manage the form.
      */
@@ -65,7 +67,7 @@ Create an EZForm instance and add some EZFormField subclass instances to it. For
     [emailField addValidator:EZFormEmailAddressValidator];
     [emailField addInputFilter:EZFormEmailAddressInputFilter];
     [_myForm addFormField:emailField];
-}
+	}
 
 You can update the form fields directly based on user input. But, more commonly, you will wire up your input controls directly to EZForm so it will handle input, validation, field navigation, etc, automatically. For example:
 

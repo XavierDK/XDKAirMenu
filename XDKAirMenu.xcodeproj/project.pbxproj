@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4C7752E41870942900163E78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7752E31870942900163E78 /* Foundation.framework */; };
-		4C7752E61870942900163E78 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7752E51870942900163E78 /* CoreGraphics.framework */; };
 		4C7752E81870942900163E78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7752E71870942900163E78 /* UIKit.framework */; };
 		4C7752EE1870942900163E78 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C7752EC1870942900163E78 /* InfoPlist.strings */; };
 		4C7752F01870942900163E78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7752EF1870942900163E78 /* main.m */; };
@@ -22,7 +21,9 @@
 		4C7753101870942900163E78 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C77530E1870942900163E78 /* InfoPlist.strings */; };
 		4C7753121870942900163E78 /* XDKAirMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7753111870942900163E78 /* XDKAirMenuTests.m */; };
 		4C77531E1870948D00163E78 /* XDKAirMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C77531D1870948D00163E78 /* XDKAirMenuController.m */; };
-		4C7753201870DBB500163E78 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C77531F1870DBB500163E78 /* QuartzCore.framework */; };
+		4CC02C861878BCED0020C6F2 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC02C851878BCED0020C6F2 /* FirstViewController.m */; };
+		4CC02C891878BCFB0020C6F2 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC02C881878BCFB0020C6F2 /* SecondViewController.m */; };
+		4CC02C8C18796B440020C6F2 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC02C8A18796B440020C6F2 /* Main_iPad.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,6 @@
 /* Begin PBXFileReference section */
 		4C7752E01870942900163E78 /* XDKAirMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XDKAirMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C7752E31870942900163E78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		4C7752E51870942900163E78 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4C7752E71870942900163E78 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C7752EB1870942900163E78 /* XDKAirMenu-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XDKAirMenu-Info.plist"; sourceTree = "<group>"; };
 		4C7752ED1870942900163E78 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -57,7 +57,11 @@
 		4C7753111870942900163E78 /* XDKAirMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDKAirMenuTests.m; sourceTree = "<group>"; };
 		4C77531C1870948D00163E78 /* XDKAirMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XDKAirMenuController.h; path = XDKAirMenu/XDKAirMenuController.h; sourceTree = "<group>"; };
 		4C77531D1870948D00163E78 /* XDKAirMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XDKAirMenuController.m; path = XDKAirMenu/XDKAirMenuController.m; sourceTree = "<group>"; };
-		4C77531F1870DBB500163E78 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4CC02C841878BCED0020C6F2 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		4CC02C851878BCED0020C6F2 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		4CC02C871878BCFB0020C6F2 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		4CC02C881878BCFB0020C6F2 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		4CC02C8B18796B440020C6F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +69,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C7753201870DBB500163E78 /* QuartzCore.framework in Frameworks */,
-				4C7752E61870942900163E78 /* CoreGraphics.framework in Frameworks */,
 				4C7752E81870942900163E78 /* UIKit.framework in Frameworks */,
 				4C7752E41870942900163E78 /* Foundation.framework in Frameworks */,
 			);
@@ -107,9 +109,7 @@
 		4C7752E21870942900163E78 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4C77531F1870DBB500163E78 /* QuartzCore.framework */,
 				4C7752E31870942900163E78 /* Foundation.framework */,
-				4C7752E51870942900163E78 /* CoreGraphics.framework */,
 				4C7752E71870942900163E78 /* UIKit.framework */,
 				4C7753051870942900163E78 /* XCTest.framework */,
 			);
@@ -123,8 +123,13 @@
 				4C7752F21870942900163E78 /* AppDelegate.h */,
 				4C7752F31870942900163E78 /* AppDelegate.m */,
 				4C7752F51870942900163E78 /* Main_iPhone.storyboard */,
+				4CC02C8A18796B440020C6F2 /* Main_iPad.storyboard */,
 				4C7752FB1870942900163E78 /* ViewController.h */,
 				4C7752FC1870942900163E78 /* ViewController.m */,
+				4CC02C841878BCED0020C6F2 /* FirstViewController.h */,
+				4CC02C851878BCED0020C6F2 /* FirstViewController.m */,
+				4CC02C871878BCFB0020C6F2 /* SecondViewController.h */,
+				4CC02C881878BCFB0020C6F2 /* SecondViewController.m */,
 				4C7752FE1870942900163E78 /* Images.xcassets */,
 				4C7752EA1870942900163E78 /* Supporting Files */,
 			);
@@ -246,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C7752FF1870942900163E78 /* Images.xcassets in Resources */,
+				4CC02C8C18796B440020C6F2 /* Main_iPad.storyboard in Resources */,
 				4C7752F71870942900163E78 /* Main_iPhone.storyboard in Resources */,
 				4C7752EE1870942900163E78 /* InfoPlist.strings in Resources */,
 			);
@@ -266,8 +272,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CC02C891878BCFB0020C6F2 /* SecondViewController.m in Sources */,
 				4C7752FD1870942900163E78 /* ViewController.m in Sources */,
 				4C77531E1870948D00163E78 /* XDKAirMenuController.m in Sources */,
+				4CC02C861878BCED0020C6F2 /* FirstViewController.m in Sources */,
 				4C7752F41870942900163E78 /* AppDelegate.m in Sources */,
 				4C7752F01870942900163E78 /* main.m in Sources */,
 			);
@@ -314,6 +322,14 @@
 				4C77530F1870942900163E78 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4CC02C8A18796B440020C6F2 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CC02C8B18796B440020C6F2 /* Base */,
+			);
+			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -401,9 +417,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XDKAirMenu/XDKAirMenu-Prefix.pch";
 				INFOPLIST_FILE = "XDKAirMenu/XDKAirMenu-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -416,9 +432,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XDKAirMenu/XDKAirMenu-Prefix.pch";
 				INFOPLIST_FILE = "XDKAirMenu/XDKAirMenu-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

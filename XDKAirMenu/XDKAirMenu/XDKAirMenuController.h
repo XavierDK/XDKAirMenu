@@ -60,7 +60,13 @@
 
 @interface XDKAirMenuController : UIViewController
 
-@property (nonatomic, strong) UIViewController *currentViewController;
+@property (nonatomic, strong, readonly) UIViewController *currentViewController;
 @property (nonatomic, weak) id<XDKAirMenuDelegate> airDelegate;
+@property (nonatomic, assign, readonly) BOOL isMenuOpened;
+
++ (instancetype)sharedMenu;
+
+- (void)openMenuAnimated;
+- (void)closeMenuAnimated;
 
 @end

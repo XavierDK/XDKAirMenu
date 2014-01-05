@@ -19,16 +19,17 @@
 
 - (void)awakeFromNib
 {
-    [super awakeFromNib];
-        
+    [super awakeFromNib];        
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.airMenuController = [[XDKAirMenuController alloc] init];
+    self.airMenuController = [XDKAirMenuController sharedMenu];
     self.airMenuController.airDelegate = self;
+    
+//    self.airMenuController.view.backgroundColor = [UIColor redColor];
 
     [self.view addSubview:self.airMenuController.view];
     [self addChildViewController:self.airMenuController];
@@ -65,6 +66,9 @@
     UIStoryboard *storyboard = self.storyboard;
     UIViewController *vc = nil;
     
+    vc.view.autoresizesSubviews = TRUE;
+    vc.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    
     if (indexPath.row == 0)
         vc = [storyboard instantiateViewControllerWithIdentifier:@"ViewController1"];
     else if (indexPath.row == 1)
@@ -77,5 +81,6 @@
 {
     return self.tableView;
 }
+
 
 @end
