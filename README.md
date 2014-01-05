@@ -1,13 +1,8 @@
 XDKAirMenu
 ==========
 
-iOs Menu like the app FIFA
+XDKAirMenu provides a iOs menu like the FIFA app playing with scale and alpha.
 
-AFNetworking is a delightful networking library for iOS and Mac OS X. It's built on top of the Foundation URL Loading System, extending the powerful high-level networking abstractions built into Cocoa. It has a modular architecture with well-designed, feature-rich APIs that are a joy to use.
-
-Perhaps the most important feature of all, however, is the amazing community of developers who use and contribute to AFNetworking every day. AFNetworking powers some of the most popular and critically-acclaimed apps on the iPhone, iPad, and Mac.
-
-Choose AFNetworking for your next project, or migrate over your existing projects—you'll be happy you did!
 
 <img src="img.gif" width='320'/>
 
@@ -19,9 +14,12 @@ Check out the documentation for a comprehensive look at all of the functionaliti
 ### Installation with CocoaPods
 
 CocoaPods is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like AFNetworking in your projects. See the "Getting Started" guide for more information.
+
+http://guides.cocoapods.org/using/getting-started.html
+
 Podfile
 
-	pod "EZForm"
+	pod "XDKAirMenu"
 
 ### Other installation
 
@@ -33,81 +31,74 @@ Add XDKAirMenu/XDKAirMenu folder to your project (or workspace).
 
 Import the main header:
 
-	#import <EZForm/EZForm.h> 
+	#import <XDKAirMenu/XDKAirMenuController.h> 
 
-Create an EZForm instance and add some EZFormField subclass instances to it. For example:
+Get the XDKAirMenuController instance, set the delegate and add it to your hierachy of views/controllers.
 
-	- (void)initializeForm
+ For example:
+
+	- (void)viewDidLoad
 	{
-    /*
-     * Create EZForm instance to manage the form.
-     */
-    _myForm = [[EZForm alloc] init];
-    _myForm.inputAccessoryType = EZFormInputAccessoryTypeStandard;
-    _myForm.delegate = self;
+    		[super viewDidLoad];
+    
+        	XDKAirMenuController *menuCtr  = [XDKAirMenuController sharedMenu];
+    		menuCtr.airDelegate = self;
 
-    /*
-     * Add an EZFormTextField instance to handle the name field.
-     * Enables a validation rule of 1 character minimum.
-     * Limits the input text field to 32 characters maximum (when hooked up to a control).
-     */
-    EZFormTextField *nameField = [[EZFormTextField alloc] initWithKey:@"name"];
-    nameField.validationMinCharacters = 1;
-    nameField.inputMaxCharacters = 32;
-    [_myForm addFormField:nameField];
-
-    /*
-     * Add an EZFormTextField instance to handle the email address field.
-     * Enables a validation rule that requires an email address format "x@y.z"
-     * Limits the input text field to 128 characters maximum and filters input
-     * to assist with entering a valid email address (when hooked up to a control).
-     */
-    EZFormTextField *emailField = [[EZFormTextField alloc] initWithKey:@"email"];
-    emailField.inputMaxCharacters = 128;
-    [emailField addValidator:EZFormEmailAddressValidator];
-    [emailField addInputFilter:EZFormEmailAddressInputFilter];
-    [_myForm addFormField:emailField];
+    		[self.view addSubview:menuCtr.view];
+    		[self addChildViewController:menuCtr];
 	}
 
-You can update the form fields directly based on user input. But, more commonly, you will wire up your input controls directly to EZForm so it will handle input, validation, field navigation, etc, automatically. For example:
+After that, just implement the method delegates : 
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+	/**
+	 *  Method of protocol returning number of sections for the menu
+	 *  @param airMenu The menu caller
+	 *  @return Number of sections for the menu
+ 	*/
+	- (NSInteger)numberOfSectionsForAirMenu:(XDKAirMenuController*)airMenu;
 
-    /* Wire up form fields to user interface elements.
-     * This needs to be done after the views are loaded (e.g. in viewDidLoad).
-     */
-    EZFormTextField *nameField = [_myForm formFieldForKey:@"name"];
-    [nameField useTextField:self.nameTextField];
+	/**
+	 *  Method of protocol returning number of rows in a section
+	 *  @param airMenu The menu caller
+	 *  @param section The section index
+	 *  @return Number of rows in the section
+	 */
+	- (NSInteger)airMenu:(XDKAirMenuController*)airMenu numberOfRowInSection:(NSInteger)section;
 
-    EZFormTextField *emailField = [_myForm formFieldForKey:@"email"];
-    [emailField useTextField:self.emailTextField];
+	/**
+	 *  Method of protocol returning the tableView used by the menu
+	 *  @param airMenu The menu caller
+	 *  @return The tableView used by the menu
+	 */
+	- (UITableView*)tableViewForAirMenu:(XDKAirMenuController*)airMenu;
 
-    /* Automatically scroll (or move) the given view if needed to
-     * keep the active form field control visible.
-     */
-    [_myForm autoScrollViewForKeyboardInput:self.tableView];
-}
+	/**
+	 *  Method of protocol returning the viewController used by the menu at the indexPath
+	 *  @param airMenu The menu caller
+	 *  @param indexPath The indexPath
+	 *  @return The viewController used by the menu at the indexPath
+	 */
+	- (UIViewController*)airMenu:(XDKAirMenuController*)airMenu viewControllerAtIndexPath:(NSIndexPath*)indexPath;
 
-If you wire up any of your views to EZForm you should unwire them in viewDidUnload, which you can do with one method call:
+That's all!
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    [_myForm unwireUserViews];
-}
+You can also call the opening and closing actions :
 
-See the demo app source for more examples of how to work with EZForm.
-Demo
+	- (IBAction)menuButtonPressed:(id)sender
+	{
+   		 XDKAirMenuController *menu = [XDKAirMenuController sharedMenu];
+    
+    	if (menu.isMenuOpened)
+      	  		[menu closeMenuAnimated];
+   		else
+        		[menu openMenuAnimated];
+	}
 
-A demo universal iOS app is included with the source, containing some example form implementations.
 
-Simple Login Form DemoRegistration Form DemoRegistration Form Demo
 
 ##Documentation
 
-EZForm comes with full API documentation, which is Xcode Document Set ready. Use appledoc to generate and install the document set into Xcode - http://gentlebytes.com/appledoc/
+XDKAirMenu comes with full API documentation, which is Xcode Document Set ready. Use appledoc to generate and install the document set into Xcode - http://gentlebytes.com/appledoc/
 
 To generate the document set using appledoc from the command-line, cd to the root of the source directory and enter:
 
