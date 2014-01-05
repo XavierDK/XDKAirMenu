@@ -19,7 +19,7 @@
 
 @property (nonatomic, assign) CGPoint startLocation;
 @property (nonatomic, assign) CGPoint lastLocation;
-@property (nonatomic, weak) UITableView *tableView;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
