@@ -28,8 +28,6 @@
     
     self.airMenuController = [XDKAirMenuController sharedMenu];
     self.airMenuController.airDelegate = self;
-    
-//    self.airMenuController.view.backgroundColor = [UIColor redColor];
 
     [self.view addSubview:self.airMenuController.view];
     [self addChildViewController:self.airMenuController];
@@ -51,16 +49,6 @@
 
 #pragma mark - XDKAirMenuDelegate
 
-- (NSInteger)numberOfSectionsForAirMenu:(XDKAirMenuController*)airMenu
-{
-    return self.tableView.numberOfSections;
-}
-
-- (NSInteger)airMenu:(XDKAirMenuController*)airMenu numberOfRowInSection:(NSInteger)section
-{
-    return [self.tableView numberOfRowsInSection:section];
-}
-
 - (UIViewController*)airMenu:(XDKAirMenuController*)airMenu viewControllerAtIndexPath:(NSIndexPath*)indexPath
 {
     UIStoryboard *storyboard = self.storyboard;
@@ -81,6 +69,5 @@
 {
     return self.tableView;
 }
-
 
 @end

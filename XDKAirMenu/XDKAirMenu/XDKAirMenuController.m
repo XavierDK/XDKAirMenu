@@ -19,7 +19,12 @@
 
 @property (nonatomic, assign) CGPoint startLocation;
 @property (nonatomic, assign) CGPoint lastLocation;
-@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, weak) UITableView *tableView;
+
+@property (nonatomic, assign) CGFloat widthOpened;
+@property (nonatomic, assign) CGFloat minScaleController;
+@property (nonatomic, assign) CGFloat minScaleTableView;
+@property (nonatomic, assign) CGFloat minAlphaTableView;
 
 @end
 
@@ -47,6 +52,24 @@
         self.tableView = [self.airDelegate tableViewForAirMenu:self];
         self.tableView.delegate = self;
     }
+    
+    self.widthOpened = WIDTH_OPENED;
+    self.minAlphaTableView = MIN_ALPHA_TABLEVIEW;
+    self.minScaleTableView = MIN_SCALE_TABLEVIEW;
+    self.minScaleController = MIN_SCALE_CONTROLLER;
+    
+    if ([self.airDelegate respondsToSelector:@selector(widthControllerForAirMenu:)])
+        self.widthOpened = [self.airDelegate widthControllerForAirMenu:self];
+    
+    if ([self.airDelegate respondsToSelector:@selector(minAlphaTableViewForAirMenu:)])
+        self.minAlphaTableView = [self.airDelegate minAlphaTableViewForAirMenu:self];
+    
+    if ([self.airDelegate respondsToSelector:@selector(minScaleTableViewForAirMenu:)])
+        self.minScaleTableView = [self.airDelegate minScaleTableViewForAirMenu:self];
+    
+    if ([self.airDelegate respondsToSelector:@selector(minScaleControllerForAirMenu:)])
+        self.minScaleController = [self.airDelegate minScaleControllerForAirMenu:self];
+    
     
     _isMenuOpened = FALSE;
     [self openViewControllerAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
@@ -106,14 +129,14 @@
     
     CGFloat distance = dx;
     
-    CGFloat scaleController = 1 - ((self.view.frame.origin.x / (self.view.frame.size.width - WIDTH_OPENED)) * (1-MIN_SCALE_CONTROLLER));
+    CGFloat scaleController = 1 - ((self.view.frame.origin.x / (self.view.frame.size.width - self.widthOpened)) * (1-self.minScaleController));
     
-    CGFloat scaleTableView = 1 - ((1 - MIN_SCALE_TABLEVIEW) + ((self.view.frame.origin.x / (self.view.frame.size.width - WIDTH_OPENED)) * (-1+MIN_SCALE_TABLEVIEW)));
+    CGFloat scaleTableView = 1 - ((1 - self.minScaleTableView) + ((self.view.frame.origin.x / (self.view.frame.size.width - self.widthOpened)) * (-1+self.minScaleTableView)));
     
-    CGFloat alphaTableView = 1 - ((1 - MIN_ALPHA_TABLEVIEW) + ((self.view.frame.origin.x / (self.view.frame.size.width - WIDTH_OPENED)) * (-1+MIN_ALPHA_TABLEVIEW)));
+    CGFloat alphaTableView = 1 - ((1 - self.minAlphaTableView) + ((self.view.frame.origin.x / (self.view.frame.size.width - self.widthOpened)) * (-1+self.minAlphaTableView)));
     
-    if (scaleTableView < MIN_SCALE_TABLEVIEW)
-        scaleTableView = MIN_SCALE_TABLEVIEW;
+    if (scaleTableView < self.minScaleTableView)
+        scaleTableView = self.minScaleTableView;
     
     if (scaleController > 1.f)
         scaleController = 1.f;
@@ -152,7 +175,7 @@
 {
     _isMenuOpened = TRUE;
     CGRect frame = self.view.frame;
-    frame.origin.x = (frame.size.width - WIDTH_OPENED);
+    frame.origin.x = (frame.size.width - self.widthOpened);
     self.view.frame = frame;
 }
 
@@ -185,10 +208,10 @@
         
         if (!firstTime)
         {
-            self.currentViewController.view.transform = CGAffineTransformMakeScale(MIN_SCALE_CONTROLLER, MIN_SCALE_CONTROLLER);
+            self.currentViewController.view.transform = CGAffineTransformMakeScale(self.minScaleController, self.minScaleController);
             
             CGRect frame = self.view.frame;
-            frame.origin.x = frame.size.width - WIDTH_OPENED;
+            frame.origin.x = frame.size.width - self.widthOpened;
             self.view.frame = frame;
             
             self.tableView.alpha = 1.f;
@@ -211,10 +234,10 @@
 {
     [UIView animateWithDuration:0.3f animations:^{
         
-        self.currentViewController.view.transform = CGAffineTransformMakeScale(MIN_SCALE_CONTROLLER, MIN_SCALE_CONTROLLER);
+        self.currentViewController.view.transform = CGAffineTransformMakeScale(self.minScaleController, self.minScaleController);
         
         CGRect frame = self.view.frame;
-        frame.origin.x = frame.size.width - WIDTH_OPENED;
+        frame.origin.x = frame.size.width - self.widthOpened;
         
         self.view.frame = frame;
         
@@ -240,9 +263,9 @@
         frame.origin.x = 0.f;
         self.view.frame = frame;
         
-        self.tableView.alpha = MIN_ALPHA_TABLEVIEW;
+        self.tableView.alpha = self.minAlphaTableView;
         
-        self.tableView.transform = CGAffineTransformMakeScale(MIN_SCALE_TABLEVIEW, MIN_SCALE_TABLEVIEW);
+        self.tableView.transform = CGAffineTransformMakeScale(self.minScaleTableView, self.minScaleTableView);
         
         frame = self.currentViewController.view.frame;
         frame.origin.x = 0.f;

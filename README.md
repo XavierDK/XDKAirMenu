@@ -3,13 +3,16 @@ XDKAirMenu
 
 XDKAirMenu provides a iOs menu like the FIFA app playing with scale and alpha.
 
+It is compatible for iPhone/iPad, works for portrait and landscape modes and is highly customisable.
+
 
 <img src="img.gif" width='320'/>
 
 ## How To Get Started
 
-Download XDKAirMenu and try out the included iPhone example app
-Check out the documentation for a comprehensive look at all of the functionalities available in XDKAirMenu
+Download XDKAirMenu and try out the included iPhone example app.
+
+Check out the documentation for a comprehensive look at all of the functionalities available in XDKAirMenu.
 
 ### Installation with CocoaPods
 
@@ -48,22 +51,7 @@ Get the XDKAirMenuController instance, set the delegate and add it to your hiera
     		[self addChildViewController:menuCtr];
 	}
 
-After that, just implement the method delegates : 
-
-	/**
-	 *  Method of protocol returning number of sections for the menu
-	 *  @param airMenu The menu caller
-	 *  @return Number of sections for the menu
- 	*/
-	- (NSInteger)numberOfSectionsForAirMenu:(XDKAirMenuController*)airMenu;
-
-	/**
-	 *  Method of protocol returning number of rows in a section
-	 *  @param airMenu The menu caller
-	 *  @param section The section index
-	 *  @return Number of rows in the section
-	 */
-	- (NSInteger)airMenu:(XDKAirMenuController*)airMenu numberOfRowInSection:(NSInteger)section;
+After that, just implement the required method delegates : 
 
 	/**
 	 *  Method of protocol returning the tableView used by the menu
@@ -122,7 +110,7 @@ If you would like assistance with integrating XDKAirMenu or modifying it for you
 
 ##License
 
-XDKAirMenu is Copyright (c) 2014 Xavier De Koninck and released open source under a MIT license:
+XDKAirMenu is Copyright (c) 2013 Xavier De Koninck and released open source under a MIT license:
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
 	of this software and associated documentation files (the "Software"), to deal
