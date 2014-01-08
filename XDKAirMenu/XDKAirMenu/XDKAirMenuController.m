@@ -106,16 +106,33 @@
     
     if (sender.state == UIGestureRecognizerStateBegan)
         self.startLocation = [sender locationInView:self.view];
-    else if (sender.state == UIGestureRecognizerStateEnded && (self.isMenuOpened || self.startLocation.x < DELTA_OPENING))
+    else if (sender.state == UIGestureRecognizerStateEnded
+             && (self.isMenuOpened
+                 || ((self.startLocation.x < DELTA_OPENING && !self.isMenuOnRight)
+                     || (self.startLocation.x > self.currentViewController.view.frame.size.width -DELTA_OPENING && self.isMenuOnRight))))
     {
         CGFloat dx = self.lastLocation.x - self.startLocation.x;
         
-        if ((self.isMenuOpened && dx < 0.f) || self.view.frame.origin.x < self.view.frame.size.width / 4)
-            [self closeMenuAnimated];
+        if (self.isMenuOnRight)
+        {
+            if ((self.isMenuOpened && dx > 0.f) || self.view.frame.origin.x > 3*self.view.frame.size.width / 4)
+                [self closeMenuAnimated];
+            else
+                [self openMenuAnimated];
+        }
         else
-            [self openMenuAnimated];
+        {
+            if ((self.isMenuOpened && dx < 0.f) || self.view.frame.origin.x < self.view.frame.size.width / 4)
+                [self closeMenuAnimated];
+            else
+                [self openMenuAnimated];
+        }
+        
     }
-    else if (sender.state == UIGestureRecognizerStateChanged && (self.isMenuOpened || self.startLocation.x < DELTA_OPENING))
+    else if (sender.state == UIGestureRecognizerStateChanged
+             && (self.isMenuOpened
+                 || ((self.startLocation.x < DELTA_OPENING && !self.isMenuOnRight)
+                     || (self.startLocation.x > self.currentViewController.view.frame.size.width -DELTA_OPENING && self.isMenuOnRight))))
         [self menuDragging:sender];
     
 }
@@ -129,11 +146,15 @@
     
     CGFloat distance = dx;
     
-    CGFloat scaleController = 1 - ((self.view.frame.origin.x / (self.view.frame.size.width - self.widthOpened)) * (1-self.minScaleController));
+    CGFloat width = (self.isMenuOnRight) ? (-self.view.frame.size.width + self.widthOpened) : (self.view.frame.size.width - self.widthOpened);
     
-    CGFloat scaleTableView = 1 - ((1 - self.minScaleTableView) + ((self.view.frame.origin.x / (self.view.frame.size.width - self.widthOpened)) * (-1+self.minScaleTableView)));
     
-    CGFloat alphaTableView = 1 - ((1 - self.minAlphaTableView) + ((self.view.frame.origin.x / (self.view.frame.size.width - self.widthOpened)) * (-1+self.minAlphaTableView)));
+    CGFloat scaleController = 1 - ((self.view.frame.origin.x / width) * (1-self.minScaleController));
+    
+    CGFloat scaleTableView = 1 - ((1 - self.minScaleTableView) + ((self.view.frame.origin.x / width) * (-1+self.minScaleTableView)));
+    
+    CGFloat alphaTableView = 1 - ((1 - self.minAlphaTableView) + ((self.view.frame.origin.x / width) * (-1+self.minAlphaTableView)));
+    
     
     if (scaleTableView < self.minScaleTableView)
         scaleTableView = self.minScaleTableView;
@@ -149,15 +170,29 @@
     
     CGRect frame = self.view.frame;
     frame.origin.x = frame.origin.x + distance;
-    if (frame.origin.x < 0.f)
-        frame.origin.x = 0.f;
-    if (frame.origin.x > (frame.size.width))
-        frame.origin.x = (frame.size.width);
+    
+    if (self.isMenuOnRight)
+    {
+        if (frame.origin.x < -frame.size.width)
+            frame.origin.x = -frame.size.width;
+        if (frame.origin.x > 0.f)
+            frame.origin.x = 0.f;
+    }
+    else
+    {
+        if (frame.origin.x < 0.f)
+            frame.origin.x = 0.f;
+        if (frame.origin.x > (frame.size.width))
+            frame.origin.x = (frame.size.width);
+    }
     
     self.view.frame = frame;
     
     frame = self.currentViewController.view.frame;
-    frame.origin.x = 0.f;
+    if (self.isMenuOnRight)
+        frame.origin.x = self.view.frame.size.width - frame.size.width;
+    else
+        frame.origin.x = 0.f;
     self.currentViewController.view.frame = frame;
 }
 
@@ -170,14 +205,6 @@
 
 
 #pragma mark - Menu
-
-- (void)openMenu
-{
-    _isMenuOpened = TRUE;
-    CGRect frame = self.view.frame;
-    frame.origin.x = (frame.size.width - self.widthOpened);
-    self.view.frame = frame;
-}
 
 - (void)openViewControllerAtIndexPath:(NSIndexPath*)indexPath
 {
@@ -193,38 +220,55 @@
         tapGesture.delegate = self;
         [self.currentViewController.view addGestureRecognizer:tapGesture];
         
+        CGRect frame = self.view.frame;
+        frame.origin.x = 0.f;
+        frame.origin.y = 0.f;
+        self.currentViewController.view.frame = frame;
+        
+        frame = self.view.frame;
+        frame.origin.x = 0.f;
+        frame.origin.y = 0.f;
+        self.view.frame = frame;
+        
         self.currentViewController.view.autoresizesSubviews = TRUE;
         self.currentViewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         
         [self.view addSubview:self.currentViewController.view];
         [self addChildViewController:self.currentViewController];
         
-        CGRect frame = self.view.frame;
-        frame.origin.x = 0.f;
-        self.currentViewController.view.frame = frame;
-        
         UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
         [self.view addGestureRecognizer:panGesture];
         
         if (!firstTime)
-        {
-            self.currentViewController.view.transform = CGAffineTransformMakeScale(self.minScaleController, self.minScaleController);
-            
-            CGRect frame = self.view.frame;
-            frame.origin.x = frame.size.width - self.widthOpened;
-            self.view.frame = frame;
-            
-            self.tableView.alpha = 1.f;
-            
-            self.tableView.transform = CGAffineTransformMakeScale(1.f, 1.f);
-            
-            frame = self.currentViewController.view.frame;
-            frame.origin.x = 0.f;
-            self.currentViewController.view.frame = frame;
-            
-            [self closeMenuAnimated];
-        }
+            [self openingAnimation];
     }
+}
+
+- (void)openingAnimation
+{
+    self.currentViewController.view.transform = CGAffineTransformMakeScale(self.minScaleController, self.minScaleController);
+    
+    CGRect frame = self.view.frame;
+    if (self.isMenuOnRight)
+        frame.origin.x = -frame.size.width + self.widthOpened;
+    else
+        frame.origin.x = frame.size.width - self.widthOpened;
+    self.view.frame = frame;
+    
+    self.tableView.alpha = 1.f;
+    
+    self.tableView.transform = CGAffineTransformMakeScale(1.f, 1.f);
+    
+    frame = self.currentViewController.view.frame;
+    if (self.isMenuOnRight)
+        frame.origin.x = self.view.frame.size.width - frame.size.width;
+    else
+        frame.origin.x = 0.f;
+    
+    self.currentViewController.view.frame = frame;
+    
+    [self closeMenuAnimated];
+
 }
 
 
@@ -237,7 +281,11 @@
         self.currentViewController.view.transform = CGAffineTransformMakeScale(self.minScaleController, self.minScaleController);
         
         CGRect frame = self.view.frame;
-        frame.origin.x = frame.size.width - self.widthOpened;
+        
+        if (self.isMenuOnRight)
+            frame.origin.x = -frame.size.width + self.widthOpened;
+        else
+            frame.origin.x = frame.size.width - self.widthOpened;
         
         self.view.frame = frame;
         
@@ -246,7 +294,10 @@
         self.tableView.transform = CGAffineTransformMakeScale(1.f, 1.f);
         
         frame = self.currentViewController.view.frame;
-        frame.origin.x = 0.f;
+        if (self.isMenuOnRight)
+            frame.origin.x = self.view.frame.size.width - frame.size.width;
+        else
+            frame.origin.x = 0.f;
         self.currentViewController.view.frame = frame;
     }];
     
@@ -283,6 +334,15 @@
     [self.currentViewController.view removeFromSuperview];
     [self.currentViewController removeFromParentViewController];
     [self openViewControllerAtIndexPath:indexPath];
+}
+
+
+#pragma mark - Setters
+
+- (void)setIsMenuOnRight:(BOOL)isMenuOnRight
+{
+    if (self.view.superview == nil)
+        _isMenuOnRight = isMenuOnRight;
 }
 
 @end

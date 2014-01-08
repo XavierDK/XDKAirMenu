@@ -74,17 +74,17 @@
  */
 - (CGFloat)minAlphaTableViewForAirMenu:(XDKAirMenuController*)airMenu;
 
-
 @end
 
 
 
 /**
  *
- * Controller which is in charge of managing an XDKAirMenu
+ * Controller which is in charge of managing a XDKAirMenu
  *
  */
 @interface XDKAirMenuController : UIViewController
+
 
 /**
  * The actual viewController opened by the menu
@@ -100,6 +100,11 @@
  * A boolean indicating if the menu is opened or not
  */
 @property (nonatomic, assign, readonly) BOOL isMenuOpened;
+
+/**
+ * A boolean indicating if the menu should be on right or not
+ */
+@property (nonatomic, assign) BOOL isMenuOnRight;
 
 
 /**

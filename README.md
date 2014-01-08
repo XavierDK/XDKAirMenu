@@ -51,7 +51,7 @@ Get the XDKAirMenuController instance, set the delegate and add it to your hiera
     		[self addChildViewController:menuCtr];
 	}
 
-After that, just implement the required method delegates : 
+After that, just implement the required methods delegates : 
 
 	/**
 	 *  Method of protocol returning the tableView used by the menu
@@ -82,6 +82,43 @@ You can also call the opening and closing actions :
         		[menu openMenuAnimated];
 	}
 
+You can also customize with these optionnals methods delegates :
+
+	/**
+ 	*  Method of protocol returning the width of visible part (Default : 35.f)
+ 	*
+	 *  @param airMenu The menu caller
+	 *
+	 *  @return The width of visible part for controller when menu opened
+	 */
+	- (CGFloat)widthControllerForAirMenu:(XDKAirMenuController*)airMenu;
+
+	/**
+	 *  Method of protocol returning the minimum of scale for the controller (Default : 0.5f)
+	 *
+	 *  @param airMenu The menu caller
+	 *
+	 *  @return The minimum of scale for the controller
+	 */
+	- (CGFloat)minScaleControllerForAirMenu:(XDKAirMenuController*)airMenu;
+
+	/**
+	 *  Method of protocol returning the minimum of scale for the tableView (Default : 0.8f)
+	 *
+	 *  @param airMenu The menu caller
+	 *
+	 *  @return The minimum of scale for the tableView
+	 */
+	- (CGFloat)minScaleTableViewForAirMenu:(XDKAirMenuController*)airMenu;
+
+	/**
+	 *  Method of protocol returning the minimum of alpha for the tableView (Default : 0.01f)
+	 *
+	 *  @param airMenu The menu caller
+	 *
+	 *  @return The minimum of alpha for the tableView
+	 */
+	- (CGFloat)minAlphaTableViewForAirMenu:(XDKAirMenuController*)airMenu;
 
 
 ##Documentation
@@ -94,9 +131,9 @@ To generate the document set using appledoc from the command-line, cd to the roo
 
 ##Requirements
 
-XDKAirMenu is compatible with iOS 7 and upwards. XDKAirMenu uses automatic reference counting (ARC).
+XDKAirMenu is compatible with iOS 6 and upwards. XDKAirMenu uses automatic reference counting (ARC).
 
-The demo app included with the source requires iOS 7.
+The demo app included with the source requires iOS 6.
 
 ##ARC
 
